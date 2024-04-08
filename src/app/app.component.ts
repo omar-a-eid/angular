@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
-import { InputComponent } from './components/input/input.component';
-import { SliderComponent } from './components/slider/slider.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { StudentsComponent } from './components/students/students.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [InputComponent, SliderComponent],
+  imports: [RegistrationComponent, StudentsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'demo';
+  students: { name: string; age: number }[] = [];
+  addStudent(e: any) {
+    this.students.push(e);
+  }
 }

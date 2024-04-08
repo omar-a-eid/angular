@@ -1,0 +1,17 @@
+<div class="container">
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" placeholder="name" [(ngModel)]="name" name="name" />
+    @if(name.length < 3 && name) {
+    <div class="error">Plaese enter a name that's at least 3 characters</div>
+    }
+  </div>
+  <div>
+    <label for="age">Age: </label>
+    <input type="number" placeholder="age" [(ngModel)]="age" name="age" />
+    @if((age < 10 || age > 30 ) && age) {
+    <div class="error">Plaese enter an age between 10 and 30</div>
+    }
+  </div>
+  <input type="button" value="Add" (click)="addStudent()" />
+</div>
