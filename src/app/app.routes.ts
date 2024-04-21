@@ -1,30 +1,16 @@
 import { Routes } from '@angular/router';
-import { ErrorComponent } from './day4/error/error.component';
-import { ProfileComponent } from './day4/profile/profile.component';
-import { RegistrationComponent } from './day4/registration/registration.component';
-import { StudentDetailsComponent } from './day4/student-details/student-details.component';
-import { StudentsComponent } from './day4/students/students.component';
+import { AddNewStudentComponent } from './day5/Components/add-new-student/add-new-student.component';
+import { ErrorComponent } from './day5/Components/error/error.component';
+import { StudentDetailsComponent } from './day5/Components/student-details/student-details.component';
+import { StudentsComponent } from './day5/Components/students/students.component';
+import { UpdateStudentComponent } from './day5/Components/update-student/update-student.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: RegistrationComponent,
-  },
-  {
-    path: 'students',
-    component: StudentsComponent,
-  },
-  {
-    path: 'student/:id',
-    component: StudentDetailsComponent,
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-  },
-  {
-    path: 'error',
-    component: ErrorComponent,
-  },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' },
+ {path: "", redirectTo:"students", pathMatch:"full"},
+ {path: "students", component: StudentsComponent},
+ {path: "students/:id", component: StudentDetailsComponent},
+ {path: "update/:id", component: UpdateStudentComponent},
+ {path: "add", component: AddNewStudentComponent},
+ {path: "**", component: ErrorComponent},
+
 ];
