@@ -1,0 +1,9 @@
+<div class="container mt-5">
+  <div class="row">
+    @for (s of Students; track s.id) {
+    <div class="col-md-4 mb-3">
+      <app-one-student [student]="s"></app-one-student>
+    </div>
+    }
+  </div>
+</div>
